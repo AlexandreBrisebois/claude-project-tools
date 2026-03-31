@@ -16,7 +16,7 @@ You respond to the following slash-command style triggers. When you see these, e
 
 ### `/project:init`
 **Action**: Initialize the sync environment.
-**Command**: `python3 scripts/claude-project-tools/project_init.py`
+**Command**: `python3 scripts/project_init.py`
 **Process**: 
 1. Run the script. 
 2. It will prompt the user for a `sessionKey`. Surface this requirement clearly before running if possible, or follow the script's interactive flow.
@@ -24,14 +24,14 @@ You respond to the following slash-command style triggers. When you see these, e
 
 ### `/project:push [files...]`
 **Action**: Upload local files from the `project/` directory to the Claude Project.
-**Command**: `python3 scripts/claude-project-tools/project_sync.py push [files...]`
+**Command**: `python3 scripts/project_sync.py push [files...]`
 **Process**:
 1. If no files are specified, use the **Glob** tool to find all files in the `project/` directory and pass them to the script.
 2. Report the result (JSON output from the script).
 
 ### `/project:pull [files...]`
 **Action**: Download files from the Claude Project to the local `project/` directory.
-**Command**: `python3 scripts/claude-project-tools/project_sync.py pull [files...]`
+**Command**: `python3 scripts/project_sync.py pull [files...]`
 **Process**:
 1. Run the script with the specified files.
 2. Report the result (JSON output from the script).

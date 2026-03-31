@@ -173,9 +173,9 @@ class ClaudeClient:
             
             # Normalize path relative to base_dir
             try:
-                rel_path = path.relative_to(base_dir)
+                rel_path = path.resolve().relative_to(base_dir.resolve())
             except ValueError:
-                rel_path = path
+                rel_path = path.relative_to(Path.cwd()) if path.is_absolute() else path
             
             file_name = str(rel_path).replace(os.path.sep, "/")
             content = path.read_text(encoding="utf-8")

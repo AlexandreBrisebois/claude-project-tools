@@ -8,6 +8,8 @@ Invoke the `project` subagent to handle the requested sync operation.
 
 Pass the full command and arguments to the agent exactly as the user typed them.
 
+**Note:** Subcommands use a space, not a colon — `/project pull`, not `/project:pull`.
+
 Examples:
 - `/project init` → run project:init workflow
 - `/project push` → push all files in project/
